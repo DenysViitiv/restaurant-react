@@ -33,10 +33,11 @@ const Gallery = () => {
       <div className="app__gallery-content">
         <SubHeading title="Instagram" />
         <h1 className="headtext__cormorant">Photo Gallery</h1>
-        <p
-          className="p__opensans"
-          style={{ color: "AAA", marginTop: "32px" }}
-        ></p>
+        <p className="p__opensans" style={{ color: "AAA", marginTop: "32px" }}>
+          Here are some photos of the dishes we provide. You can see that our
+          food looks delicious but you should check that it tastes wonderful in
+          our restaurant
+        </p>
         <button type="button" className="custom__button">
           View More
         </button>
@@ -44,25 +45,25 @@ const Gallery = () => {
 
       <div className="app__gallery-images">
         <div className="app__gallery-images_container" ref={scrollRef}>
-        {galleryImages.map((image, index) => (
-          <div
-            className="app__gallery-images_card flex__center"
-            key={`gallery_image-${index + 1}`}
-          >
-            <img src={image} alt="gallery" />
-            <BsInstagram className="gallery__image-icon"/>
+          {galleryImages.map((image, index) => (
+            <div
+              className="app__gallery-images_card flex__center"
+              key={`gallery_image-${index + 1}`}
+            >
+              <img src={image} alt="gallery" />
+              <BsInstagram className="gallery__image-icon" />
+            </div>
+          ))}
+          <div className="app__gallery-images_arrows">
+            <BsArrowLeftShort
+              className="gallery__arrow-icons"
+              onClick={() => scroll("left")}
+            />
+            <BsArrowRightShort
+              className="gallery__arrow-icons"
+              onClick={() => scroll("right")}
+            />
           </div>
-        ))}
-        <div className="app__gallery-images_arrows">
-          <BsArrowLeftShort
-            className="gallery__arrow-icons"
-            onClick={() => scroll("left")}
-          />
-          <BsArrowRightShort
-            className="gallery__arrow-icons"
-            onClick={() => scroll("right")}
-          />
-        </div>
         </div>
       </div>
     </div>
